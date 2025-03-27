@@ -13,11 +13,10 @@
     <title>Jaylynn Ward - Graphic Design Work</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             background-color: rgb(246, 242, 244);
             text-align: center;
             margin: 0;
-            padding: 0;
+            padding: 50px;
         }
 
         .content-wrapper {
@@ -28,7 +27,7 @@
 
         .header-box {
             text-align: center;
-            color: rgb(237, 216, 225);
+            color: rgb(246, 242, 244);
             font-size: 3em;
             font-weight: bold;
             border: 2px solid rgb(114, 12, 56);
@@ -80,6 +79,29 @@
             margin: auto; 
             max-width: 500px;
             width: 100%;
+        }
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr); 
+            gap: 20px;
+            justify-content: center;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .category-button {
+            display: block;
+            background-color: rgb(114, 12, 56);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+            transition: 0.3s ease-in-out;
         }
 
     </style>
@@ -197,6 +219,9 @@
    
 
 
+</div>
+<div class="button-container">
+  <a href="index.html" class="category-button">Home</a>
 </div>
   </body>
 </html>
