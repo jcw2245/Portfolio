@@ -71,6 +71,29 @@
         .grid-item a:hover {
             background: rgb(114, 12, 56);
         }
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr); 
+            gap: 20px;
+            justify-content: center;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .category-button {
+            display: block;
+            background-color: rgb(114, 12, 56);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+            transition: 0.3s ease-in-out;
+        }
     </style>
 </head>
 <body style="background-color:rgb(204, 193, 197);">
@@ -151,6 +174,8 @@
         </div>
 
     </div>
-
+    <div class="button-container">
+        <a href="index.html" class="category-button">Home</a>
+      </div>
 </body>
 </html>
