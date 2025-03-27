@@ -17,17 +17,17 @@
             color: rgb(237, 216, 225);
             font-size: 3em;
             font-weight: bold;
-            border: 2px solid rgb(121, 60, 86);
+            border: 2px solid rgb(114, 12, 56);
             padding: 40px 0;
             margin: 20px auto;
             width: 98.5%;
-            background-color: rgb(121, 60, 86);
+            background-color: rgb(114, 12, 56);
             box-sizing: border-box;
             box-shadow: 0px 2px 4px #33031b;
         }
 
         body {
-            background-color: rgb(204, 193, 197);
+            background-color: rgb(215, 205, 207);
             text-align: center;
         }
         .button-container {
@@ -42,7 +42,7 @@
 
         .category-button {
             display: block;
-            background-color: #7b3c56;
+            background-color: rgb(114, 12, 56);
             color: white;
             padding: 15px 30px;
             border-radius: 10px;
@@ -61,7 +61,7 @@
     max-width: none;
 }
         .category-button:hover {
-            background-color: #943f60;
+            background-color: rgb(114, 12, 56);
         }
         h3 {
             line-height: 1.6;
@@ -84,19 +84,49 @@
             max-width: 700px;
             margin: auto;
         }
+        .feature-section {
+  position: relative;
+  background-color: #d5d1d1;
+  padding: 60px 40px 60px;
+  margin: 80px 0;
+  text-align: left;
+  max-width: 100%;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.feature-image {
+  position: absolute;
+  top: -55px;
+  left: 20px;
+  width: 330px; /* Adjust size */
+  border-radius: 12px;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.feature-text {
+  margin-left: 350px; /* Gives space for image to the left */
+  font-family: 'Lora', serif;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+
     </style>
 </head>
 <body>
 
     <div class="header-box">Jaylynn Ward's Portfolio</div>
     
-    <img src="Photos/portfolio_front_b&w-2.jpg" alt="Sign" width="400" class="center-img">
-
-    <h3>Jaylynn Ward graduated from Abilene Christian University in
-        May. She is now attending the Columbia Journalism School to obtain a M.S. Data Journalism degree. Before enrolling in the data journalism program, she was editor in chief of The Optimist
-        and a producer at ACUTV (a sports broadcast through ESPN+). She interned for Congressman
-        Jodey Arrington in Abilene. She also was a graphic design and public relations intern for Hendrick Medical Center in Texas. </h3>
-</div>
+    <div class="feature-section">
+        <img src="Photos/portfolio_front_b&w-2.jpg" alt="Jaylynn Ward" class="feature-image" />
+      
+        <div class="feature-text">
+          <h3>
+            Jaylynn Ward graduated from Abilene Christian University in May. She is now attending the Columbia Journalism School to obtain a M.S. Data Journalism degree. Before enrolling in the data journalism program, she was editor in chief of <em>The Optimist</em> and a producer at ACUTV (a sports broadcast through ESPN+). She interned for Congressman Jodey Arrington in Abilene. She also was a graphic design and public relations intern for Hendrick Medical Center in Texas.
+          </h3>
+        </div>
+      </div>
+      
     <div class="button-container">
         <a href="writing.html" class="category-button">Journalism and PR Writing</a>
         <a href="Data_Journalism_Examples.html" class="category-button">Data Journalism and Coding</a>
