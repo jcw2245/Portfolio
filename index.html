@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jaylynn Ward's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding-top: 250px;
+      font-family: 'Lora', serif;
+      background-color: #eaeaea;
+    }
+
+    .top-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #b5c7c5;
+      z-index: 1001;
+      box-shadow: 0px 2px 4px #032533;
+    }
+
+    .navbar-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      padding: 0 20px;
+    }
+
+    .navbar-content ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      display: flex;
+    }
+
+    .navbar-content ul li {
+      position: relative;
+    }
+
+    .navbar-content ul li a {
+      display: block;
+      color: #032533;
+      text-align: center;
+      padding: 20px 30px;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+
+    .navbar-content ul li a:hover {
+      background-color: #d8e1e0;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f0f7f6;
+      min-width: 180px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      top: 100%;
+      left: 0;
+      z-index: 1002;
+    }
+    .feature-text {
+  margin-left: 350px; 
+  font-family: 'Lora', serif;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+    .dropdown-content a {
+      color: #032533;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #d8e1e0;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+    }
+
+    .search-bar input[type="text"] {
+      padding: 8px;
+      margin-right: 5px;
+      border: none;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+
+    .search-bar button {
+      padding: 8px 12px;
+      background-color: #032533;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .search-bar button:hover {
+      background-color: #1a4a5a;
+    }
+
+    .header-box {
+      text-align: center;
+      font-size: 5.5em;
+      font-weight: bold;
+      color: rgb(49, 87, 92);
+      padding: 30px 0 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin: 40px auto;
+      padding: 20px;
+      max-width: 1300px;
+      background-color: #f2f2f2;
+      border: 1px solid #ccc;
+    }
+
+    .text-box, .image-box {
+      flex: 1 1 48%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .text-box {
+      background-color: white;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    .text-box h2 {
+      font-size: 2em;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .text-box p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .container:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    @media (max-width: 800px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .text-box, .image-box {
+        flex: 1 1 100%;
+      }
+    }
+    .faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+    }
+    .centered-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;}
+  .portfolio-section {
+  background-color: #f7f9f9;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+}
+
+.portfolio-header-link {
+  display: block;
+  background-color: #b5c7c5;
+  color: #032533;
+  text-decoration: none;
+  text-align: center;
+  padding: 15px;
+  border-radius: 12px;
+  font-family: 'Lora', serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s ease;
+}
+
+.portfolio-header-link:hover {
+  background-color: #a0b4b2;
+  cursor: pointer;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.portfolio-grid img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+@media (max-width: 800px) {
+  .header-box {
+    font-size: 2.2em;         
+    padding: 20px 15px;
+    line-height: 1.2;
+    word-break: break-word;  
+  }
+
+  .navbar-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-content ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-content ul li a {
+    padding: 12px 20px;
+    font-size: 1em;
+  }
+
+  body {
+    padding-top: 180px;
+  }
+  
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <div class="top-header">
+    <div class="navbar-content">
+      <ul>
+        <li class="dropdown"><a href="#">Example Pages</a>
+          <div class="dropdown-content">
+            <a href="writing.html">Journalism and PR Writing</a>
+            <a href="data.html">Data Journalism and Coding</a>
+            <a href="graphic_design.html">Graphic Design</a>
+            <a href="photo.html">Photography</a>
+          </div>
+        </li>
+        <li><a href="resume.html">Resume</a></li>
+      </ul>
+
+    </div>
+    <div class="header-box">Jaylynn Ward's Portfolio</div>
+  </div>
+
+  <div class="container">
+    <div class="text-box">
+      <h3>Jaylynn Ward graduated from Abilene Christian University in May. She is now attending the Columbia Journalism School to obtain a M.S. Data Journalism degree. Before enrolling in the data journalism program, she was editor in chief of The Optimist and a producer at ACUTV (a sports broadcast through ESPN+). She interned for Congressman Jodey Arrington in Abilene, TX. She also was a graphic design and public relations intern for Hendrick Medical Center in Texas.</h3>
+    </div>
+    <div class="image-box">
+      <img src="Photos/converted copy.jpg" alt="Headshot" />
+    </div>
+  </div>
+    <div class="portfolio-section">
+    <a href="writing.html" class="portfolio-header-link">Journalism and PR Writing</a>
+    <div class="portfolio-grid">
+      <img src="Photos/HispanicServingInstitution_writing.png" alt="Example 1">
+      <img src="Photos/War_writing.png" alt="Example 3">
+      <img src="Photos/ZambiaMission_writing.png" alt="Example 4">
+    </div>
+  </div>
+
+    <div class="portfolio-section">
+    <a href="data.html" class="portfolio-header-link">Data Journalism & Coding</a>
+    <div class="portfolio-grid">
+      <img src="Photos/cpsmapdifference.png" alt="Example 1">
+      <img src="Photos/immigration_ex.png" alt="Example 2">
+      <img src="Photos/Abortion_Map.png" alt="Example 3">
+    </div>
+  </div>
+
+  <div class="portfolio-section">
+    <a href="graphic_design.html" class="portfolio-header-link">Graphic Design</a>
+    <div class="portfolio-grid">
+      <img src="Photos/Pickleball Tournament Hub App.png" alt="Example 1">
+      <img src="Photos/Final_Map copy.png" alt="Example 2">
+      <img src="Photos/Mother's Day Sale Eboard.png" alt="Example 3">
+    </div>
+  </div>
+<div class="portfolio-section">
+    <a href="photo.html" class="portfolio-header-link">Photography</a>
+    <div class="portfolio-grid">
+      <img src="Photos/R_eng_3.jpg" alt="Example 1">
+      <img src="Photos/Wedding_5.jpg" alt="Example 2">
+      <img src="Photos/f_grad1.jpg" alt="Example 3">
+    </div>
+  </div>
+  
+
+
+  </div>
+
+</body>
+</html>

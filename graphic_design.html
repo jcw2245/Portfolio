@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Graphic Design Examples</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding-top: 250px;
+      font-family: 'Lora', serif;
+      background-color: #eaeaea;
+    }
+
+    .top-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #b5c7c5;
+      z-index: 1001;
+      box-shadow: 0px 2px 4px #032533;
+    }
+
+    .navbar-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      padding: 0 20px;
+    }
+
+    .navbar-content ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      display: flex;
+    }
+
+    .navbar-content ul li {
+      position: relative;
+    }
+
+    .navbar-content ul li a {
+      display: block;
+      color: #032533;
+      text-align: center;
+      padding: 20px 30px;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+
+    .navbar-content ul li a:hover {
+      background-color: #d8e1e0;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f0f7f6;
+      min-width: 180px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      top: 100%;
+      left: 0;
+      z-index: 1002;
+    }
+    .feature-text {
+  margin-left: 350px; 
+  font-family: 'Lora', serif;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+    .dropdown-content a {
+      color: #032533;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #d8e1e0;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+    }
+
+    .search-bar input[type="text"] {
+      padding: 8px;
+      margin-right: 5px;
+      border: none;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+
+    .search-bar button {
+      padding: 8px 12px;
+      background-color: #032533;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .search-bar button:hover {
+      background-color: #1a4a5a;
+    }
+
+    .header-box {
+      text-align: center;
+      font-size: 5.5em;
+      font-weight: bold;
+      color: rgb(49, 87, 92);
+      padding: 30px 0 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin: 40px auto;
+      padding: 20px;
+      max-width: 1300px;
+      background-color: #f2f2f2;
+      border: 1px solid #ccc;
+    }
+
+    .text-box, .image-box {
+      flex: 1 1 48%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .text-box {
+      background-color: white;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    .text-box h2 {
+      font-size: 2em;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .text-box p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .container:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    @media (max-width: 800px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .text-box, .image-box {
+        flex: 1 1 100%;
+      }
+    }
+    .faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+    }
+    .centered-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;}
+  .portfolio-section {
+  background-color: #f7f9f9;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+}
+
+.portfolio-header-link {
+  display: block;
+  background-color: #b5c7c5;
+  color: #032533;
+  text-decoration: none;
+  text-align: center;
+  padding: 15px;
+  border-radius: 12px;
+  font-family: 'Lora', serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s ease;
+}
+
+.portfolio-header-link:hover {
+  background-color: #a0b4b2;
+  cursor: pointer;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.portfolio-grid img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+
+.gallery-container {
+            margin-bottom: 40px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            max-width: 800px;
+            margin: 10px auto;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+
+        .lightbox:target {
+            display: flex;
+        }
+
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr); 
+            gap: 20px;
+            justify-content: center;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .category-button {
+            display: block;
+            background-color: rgb(49, 87, 92);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+            transition: 0.3s ease-in-out;
+        }
+
+        .design-group {
+  margin: 40px auto;
+  max-width: 1000px;
+  padding: 20px;
+  background-color: #f7f9f9;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.design-title {
+  text-align: center;
+  font-family: 'Lora', serif;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #032533;
+}
+
+.design-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.design-images img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.design-description {
+  text-align: center;
+  font-family: 'Lora', serif;
+  font-size: 1em;
+  color: #2c4442;
+  margin-top: 20px;
+}
+@media (max-width: 800px) {
+  .header-box {
+    font-size: 2.2em;
+    padding: 20px 15px;
+    line-height: 1.2;
+    word-break: break-word;
+  }
+
+  .navbar-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-content ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-content ul li a {
+    padding: 12px 20px;
+    font-size: 1em;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    padding: 0 10px;
+  }
+
+  body {
+    padding-top: 180px;
+  }
+
+  .dropdown-content {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .gallery-container h2 {
+    font-size: 1.4em;
+    padding: 0 10px;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .text-box, .image-box {
+    flex: 1 1 100%;
+    padding: 10px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+
+  <div class="top-header">
+    <div class="navbar-content">
+      <ul>
+        <li class="dropdown"><a href="#">Example Pages</a>
+          <div class="dropdown-content">
+           <a href="writing.html">Journalism and PR Writing</a>
+            <a href="data.html">Data Journalism and Coding</a>
+            <a href="graphic_design.html">Graphic Design</a>
+            <a href="photo.html">Photography</a>
+          </div>
+        </li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+
+    </div>
+    <div class="header-box">Graphic Design</div>
+  </div>
+ <div class="design-group">
+    <h2 class="design-title">Women's College Basketball Graduation Rates for the 23-24 Season (Thesis Mock-Up) </h2>
+    <div class="design-images">
+      <img src="Photos/Final_Map copy.png" alt="Thesis graduation rates five maps">
+    </div>
+    <p class="design-description">
+      This was a map that described the graduation rates for each ranking that was dependent on their records on the court. It displays how well the combined schools did on the court along with their graduation rates. To make this map, DataWrapper was used to make the base of the map and Adobe Illustrator was used to edit and annotate.</p>
+    </p>
+  </div>
+  
+   <div class="design-group">
+    <h2 class="design-title">Mayoral Democratic Primary for NYC Election Map (Mock-Up)</h2>
+    <div class="design-images">
+      <img src="Photos/electionmap2.png" alt="Election Map">
+    </div>
+    <p class="design-description">
+      This was a mockup of the mayoral elections in NYC. This was created in QGIS, with the data work for the percentages also in QGIS. The edits were then done in Adobe Illustrator.
+    </p>
+  </div>
+  
+
+  <div class="design-group">
+    <h2 class="design-title">Time To Vote Graphic</h2>
+    <div class="design-images">
+      <img src="Photos/Time Off to Vote Hub App.png" alt="Time to Vote Graphic">
+    </div>
+    <p class="design-description">
+      This was an announcement for employees at Hendrick Health for time off for voting. This graphic was built in Adobe Illustrator and made in several sizes for phones, newsletter, and computer and TV screens.
+    </p>
+  </div>
+  
+  <div class="design-group">
+    <h2 class="design-title">Zoo Day for Kids</h2>
+    <div class="design-images">
+      <img src="Photos/Zoo Day Riddle-01 (1).png" alt="Zoo Day Graphic 1">
+      <img src="Photos/Zoo Day Riddle-02 (1).png" alt="Zoo Day Graphic 2">
+    </div>
+    <p class="design-description">
+      This was an activity for children of Hendrick Health employees visiting the Zoo. This graphic was built in Adobe Illustrator.
+    </p>
+  </div>
+  
+  <div class="design-group">
+    <h2 class="design-title">Heart Attack Symptoms Flyer</h2>
+    <div class="design-images">
+      <img src="Photos/Heart Attack Symptoms English.jpg" alt="Zoo Day Graphic 1">
+      <img src="Photos/Heart Attack Symptoms Spanish.jpg" alt="Zoo Day Graphic 2">
+    </div>
+    <p class="design-description">
+      This was a flyer made in both English and Spanish for patients experiencing these symptoms. The flyer was made in Adobe Illustrator.</p>
+  </div>
+
+
+  <div class="design-group">
+    <h2 class="design-title">Research Center Brochure</h2>
+    <div class="design-images">
+      <img src="Photos/Research Brochure 1 (1).png" alt="Zoo Day Graphic 1">
+      <img src="Photos/Research Brochure 2 (1).png" alt="Zoo Day Graphic 2">
+    </div>
+    <p class="design-description">
+      This was a brochure made for the research center at Hendrick Health. The flyer was made in Adobe Illustrator.</p>
+  </div>
+
+  <div class="design-group">
+    <h2 class="design-title">Patient Identification Flyer</h2>
+    <div class="design-images">
+      <img src="Photos/CheckPatientIDFlyer.png" alt="Zoo Day Graphic 1">
+    </div>
+    <p class="design-description">
+      This was an announcement for employees at Hendrick Health for how to correctly identify a patient. This graphic was built in Adobe Illustrator.</p>
+  </div>
+
+  <div class="design-group">
+    <h2 class="design-title">Nurses Week Announcement</h2>
+    <div class="design-images">
+      <img src="Photos/Nurses week Eboard.png" alt="Zoo Day Graphic 1">
+    </div>
+    <p class="design-description">
+      This was an announcement for employees at Hendrick Health for a week of recognition for nurses. This graphic was built in Adobe Illustrator and made in several sizes for phones, newsletter, and computer and TV screens.</p>
+  </div>
+
+ 
+  <div class="design-group">
+    <h2 class="design-title">Breast Cancer Card</h2>
+    <div class="design-images">
+      <img src="Photos/Thinking of You Breast Cancer Card Side.jpg" alt="Zoo Day Graphic 1">
+    </div>
+    <p class="design-description">
+      This was a card for patients who are or have experienced Breast Cancer at Hendrick Health. It was a gift to the patients from the clinics in a form of a printed card. This was created in Adobe Illustrator.</p>
+  </div>
+
+   
+  <div class="design-group">
+    <h2 class="design-title">Fall Sale Advertisement</h2>
+    <div class="design-images">
+      <img src="Photos/Fall Sale Flyer_Portfolio.jpg" alt="Zoo Day Graphic 1">
+    </div>
+    <p class="design-description">
+      This was an announcement for employees at Hendrick Health for the fall sale. This graphic was built in Adobe Illustrator and made in several sizes for phones, newsletter, and computer and TV screens.</p>
+  </div>
+ 
+  <div class="design-group">
+    <h2 class="design-title">P.E.T. Cards</h2>
+    <div class="design-images">
+      <img src="Photos/Pet Info Cards- Sasafras Front (1).png" alt="Zoo Day Graphic 1">
+      <img src="Photos/Pet Info Cards- Sasafras Back (1).png" alt="Zoo Day Graphic 2">
+    </div>
+    <p class="design-description">
+      This was a project for the Pet Enhanced Therapy Services at Hendrick Health. It was a group of six baseball cards created for patients to collect. It was designed in Illustrator.</p>
+  </div>
+
+  <div class="design-group">
+    <h2 class="design-title">Workforce Development Card</h2>
+    <div class="design-images">
+      <img src="Photos/Workforce Development Graduation Cards (1).jpg" alt="Zoo Day Graphic 1">
+    </div>
+    <p class="design-description">
+      This was a card for employees as a congratulatory card to give them. It was created in Illustrator.</p>
+  </div>
+  
+  <div class="design-group">
+    <h2 class="design-title">Hendrick Health Mission and Ministry Announcements</h2>
+    <div class="design-images">
+      <img src="Photos/Sacred Songs of Advent Hub App.png" alt="Zoo Day Graphic 1">
+      <img src="Photos/Advent Prayer Service 2023 Eboard (1).png" alt="Zoo Day Graphic 2">
+    </div>
+    <p class="design-description">
+      This was designed for the missions and ministry department at Hendrick Health. It was designed in Illustrator.</p>
+  </div>
+
+  <div class="design-group">
+    <h2 class="design-title">Hendrick Health Employee Survey</h2>
+    <div class="design-images">
+      <img src="Photos/Gallup Q12 Survey Hub App 1.png" alt="Zoo Day Graphic 1">
+      <img src="Photos/Gallup Q12 Survey Hub App 2.png" alt="Zoo Day Graphic 2">
+      <img src="Photos/Gallup Q12 Survey Hub App 3.png" alt="Zoo Day Graphic 2">
+      <img src="Photos/Gallup Q12 Survey Hub App 4.png" alt="Zoo Day Graphic 2">
+    </div>
+    <p class="design-description">
+      This was a project for an employee engagement survey. It was designed in Illustrator.</p>
+  </div>
+
+ 
+</div>
+<div class="button-container">
+<a href="index.html" class="category-button">Home</a>
+</div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Photography Examples</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding-top: 250px;
+      font-family: 'Lora', serif;
+      background-color: #eaeaea;
+    }
+
+    .top-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #b5c7c5;
+      z-index: 1001;
+      box-shadow: 0px 2px 4px #032533;
+    }
+
+    .navbar-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      padding: 0 20px;
+    }
+
+    .navbar-content ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      display: flex;
+    }
+
+    .navbar-content ul li {
+      position: relative;
+    }
+
+    .navbar-content ul li a {
+      display: block;
+      color: #032533;
+      text-align: center;
+      padding: 20px 30px;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+
+    .navbar-content ul li a:hover {
+      background-color: #d8e1e0;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f0f7f6;
+      min-width: 180px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      top: 100%;
+      left: 0;
+      z-index: 1002;
+    }
+    .feature-text {
+  margin-left: 350px; 
+  font-family: 'Lora', serif;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+    .dropdown-content a {
+      color: #032533;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #d8e1e0;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+    }
+
+    .search-bar input[type="text"] {
+      padding: 8px;
+      margin-right: 5px;
+      border: none;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+
+    .search-bar button {
+      padding: 8px 12px;
+      background-color: #032533;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .search-bar button:hover {
+      background-color: #1a4a5a;
+    }
+
+    .header-box {
+      text-align: center;
+      font-size: 5.5em;
+      font-weight: bold;
+      color: rgb(49, 87, 92);
+      padding: 30px 0 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin: 40px auto;
+      padding: 20px;
+      max-width: 1300px;
+      background-color: #f2f2f2;
+      border: 1px solid #ccc;
+    }
+
+    .text-box, .image-box {
+      flex: 1 1 48%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .text-box {
+      background-color: white;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    .text-box h2 {
+      font-size: 2em;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .text-box p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .container:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    @media (max-width: 800px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .text-box, .image-box {
+        flex: 1 1 100%;
+      }
+    }
+    .faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+    }
+    .centered-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;}
+  .portfolio-section {
+  background-color: #f7f9f9;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+}
+
+/* Styled as a big button */
+.portfolio-header-link {
+  display: block;
+  background-color: #b5c7c5;
+  color: #032533;
+  text-decoration: none;
+  text-align: center;
+  padding: 15px;
+  border-radius: 12px;
+  font-family: 'Lora', serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s ease;
+}
+
+.portfolio-header-link:hover {
+  background-color: #a0b4b2;
+  cursor: pointer;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.portfolio-grid img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+
+.gallery-container {
+            margin-bottom: 40px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            max-width: 800px;
+            margin: 10px auto;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+
+        .lightbox:target {
+            display: flex;
+        }
+
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr); 
+            gap: 20px;
+            justify-content: center;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .category-button {
+            display: block;
+            background-color: rgb(49, 87, 92);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+            transition: 0.3s ease-in-out;
+
+        
+        
+          }
+          @media (max-width: 800px) {
+  .header-box {
+    font-size: 2.2em;
+    padding: 20px 15px;
+    line-height: 1.2;
+    word-break: break-word;
+  }
+
+  .navbar-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-content ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-content ul li a {
+    padding: 12px 20px;
+    font-size: 1em;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    padding: 0 10px;
+  }
+
+  body {
+    padding-top: 180px;
+  }
+
+  .dropdown-content {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .gallery-container h2 {
+    font-size: 1.4em;
+    padding: 0 10px;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .text-box, .image-box {
+    flex: 1 1 100%;
+    padding: 10px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="top-header">
+    <div class="navbar-content">
+      <ul>
+        <li class="dropdown"><a href="#">Example Pages</a>
+          <div class="dropdown-content">
+            <a href="writing.html">Journalism and PR Writing</a>
+            <a href="data.html">Data Journalism and Coding</a>
+            <a href="graphic_design.html">Graphic Design</a>
+            <a href="photo.html">Photography</a>
+          </div>
+        </li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+
+    </div>
+    <div class="header-box">Photography</div>
+  </div>
+
+  <div class="gallery-container">
+    <h2 style="text-align: center;">Wedding Photography</h2>
+    <div class="gallery">
+        <a href="#wedding_1"><img src="Photos/Wedding_1.jpg" alt="Nature 1"></a>
+        <a href="#wedding_2"><img src="Photos/Wedding_2.jpg" alt="Nature 2"></a>
+        <a href="#wedding_3"><img src="Photos/Wedding_3.jpg" alt="Nature 3"></a>
+        <a href="#wedding_4"><img src="Photos/Wedding_4.jpg" alt="Nature 3"></a>
+        <a href="#wedding_5"><img src="Photos/Wedding_5.jpg" alt="Nature 3"></a>
+        <a href="#wedding_6"><img src="Photos/Wedding_6.jpg" alt="Nature 3"></a>
+        <a href="#wedding_7"><img src="Photos/Wedding_7.jpg" alt="Nature 3"></a>
+        <a href="#wedding_8"><img src="Photos/Wedding_8.jpg" alt="Nature 3"></a>
+        <a href="#wedding_9"><img src="Photos/Wedding_9.jpg" alt="Nature 3"></a>
+    </div>
+</div>
+  
+<div class="gallery-container">
+  <h2 style="text-align: center;">Engagement Photography</h2>
+  <div class="gallery">
+    <a href="#A_eng_1"><img src="Photos/A_eng_1.jpg" alt="Nature 1"></a>
+    <a href="#A_eng_2"><img src="Photos/A_eng_2.jpg" alt="Nature 1"></a>
+    <a href="#A_eng_3"><img src="Photos/A_eng_3.jpg" alt="Nature 1"></a>
+    <a href="#A_eng_4"><img src="Photos/A_eng_4.jpg" alt="Nature 1"></a>
+    <a href="#A_eng_5"><img src="Photos/A_eng_5.jpg" alt="Nature 1"></a>
+    <a href="#A_eng_6"><img src="Photos/A_eng_6.jpg" alt="Nature 1"></a>
+    <a href="#A_eng_7"><img src="Photos/A_eng_7.jpg" alt="Nature 1"></a>
+    <a href="#A_eng_8"><img src="Photos/A_eng_8.jpg" alt="Nature 1"></a>
+    <a href="#A_eng_9"><img src="Photos/A_eng_9.jpg" alt="Nature 1"></a>
+  </div>
+
+  <div class="gallery">
+    <a href="#R_eng_1"><img src="Photos/R_eng_1.jpg" alt="Nature 1"></a>
+    <a href="#R_eng_2"><img src="Photos/R_eng_2.jpg" alt="Nature 1"></a>
+    <a href="#R_eng_3"><img src="Photos/R_eng_9.jpg" alt="Nature 1"></a>
+    <a href="#R_eng_4"><img src="Photos/R_eng_4.jpg" alt="Nature 1"></a>
+    <a href="#R_eng_5"><img src="Photos/R_eng_8.jpg" alt="Nature 1"></a>
+    <a href="#R_eng_6"><img src="Photos/R_eng_6.jpg" alt="Nature 1"></a>
+    <a href="#R_eng_7"><img src="Photos/R_eng_7.jpg" alt="Nature 1"></a>
+    <a href="#R_eng_8"><img src="Photos/R_eng_3.jpg" alt="Nature 1"></a>
+    <a href="#R_eng_9"><img src="Photos/R_eng_5.jpg" alt="Nature 1"></a>
+  </div>
+</div>
+<div class="gallery-container">
+<h2 style="text-align: center;">Graduation Photography</h2>
+<div class="gallery">
+    <a href="#wedding_1"><img src="Photos/pey_grad1.jpg" alt="Nature 1"></a>
+    <a href="#wedding_2"><img src="Photos/Pey_grad3.jpg" alt="Nature 2"></a>
+    <a href="#wedding_3"><img src="Photos/Pey_grad4.jpg" alt="Nature 3"></a>
+    <a href="#wedding_4"><img src="Photos/f_grad1.jpg" alt="Nature 3"></a>
+    <a href="#wedding_5"><img src="Photos/f_grad2.jpg" alt="Nature 3"></a>
+    <a href="#wedding_6"><img src="Photos/F_grad3.jpg" alt="Nature 3"></a>
+</div>
+</div>
+
+<div class="gallery-container">
+<h2 style="text-align: center;">Studio Photography</h2>
+<div class="gallery">
+    <a href="#wedding_1"><img src="Photos/studio1.jpg" alt="Nature 1"></a>
+    <a href="#wedding_2"><img src="Photos/studio3.jpg" alt="Nature 2"></a>
+    <a href="#wedding_3"><img src="Photos/studio5.jpg" alt="Nature 3"></a>
+</div>
+</div>
+<div class="gallery-container">
+<h2 style="text-align: center;">Self Portraits (Photography Class Final)</h2>
+<div class="gallery">
+    <a href="#wedding_1"><img src="Photos/Final_photography1.jpg" alt="Nature 1"></a>
+    <a href="#wedding_2"><img src="Photos/Final_photography2.jpg" alt="Nature 2"></a>
+    <a href="#wedding_3"><img src="Photos/Final_photography3.jpg" alt="Nature 3"></a>
+</div>
+</div>
+
+<div class="button-container">
+  <a href="index.html" class="category-button">Home</a>
+</div>
+
+  </div>
+
+</body>
+</html>
