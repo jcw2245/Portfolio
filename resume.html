@@ -356,37 +356,11 @@
             transition: 0.3s ease-in-out;
         }
 
-.resume-container {
+        .resume-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
   padding: 30px 20px;
   background-color: #ced5d5;
-}
-
-.resume-container iframe {
-  width: 100%;
-  max-width: 1000px;
-  height: 900px;
-  border: 2px solid #b5c7c5;
-  border-radius: 10px;
-  background: white;
-}
-
-.resume-button {
-  display: none;
-  margin-top: 20px;
-  padding: 15px 25px;
-  background-color: rgb(49, 87, 92);
-  color: white;
-  text-decoration: none;
-  border-radius: 10px;
-  font-size: 1.1em;
-  font-weight: bold;
-}
-
-.resume-button:hover {
-  background-color: rgb(23, 41, 43);
 }
 
 .resume-container embed,
@@ -480,20 +454,9 @@
       <div class="header-box">Resume</div>
     </div>
 
-<div class="resume-container">
-
-  <iframe
-    src="Resume.pdf"
-    title="Resume">
-  </iframe>
-
-  <a class="resume-button"
-     href="Resume.pdf"
-     target="_blank">
-     Open Resume PDF
-  </a>
-
-</div>
+    <div class="resume-container">
+      <embed src="https://jcw2245.github.io/Portfolio/Resume.pdf" width="100%" height="800px" type="application/pdf">
+    </div>
   
     <div class="button-container">
       <a href="index.html" class="category-button">Home</a>
